@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="ir.boardbazi.findaspy"
+          android:installLocation="preferExternal">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:largeHeap="true"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".inGameActivity.InGameActivity"
+        android:screenOrientation="landscape"
+        android:configChanges="orientation|screenSize">
+        </activity>
+        <activity
+                android:name=".game_activity.StartGameActivity"
+                android:screenOrientation="landscape"
+                android:configChanges="orientation|screenSize">
+        </activity>
+        <activity
+                android:name=".places_activity.PlacesActivity"
+                android:hardwareAccelerated="false"
+                android:screenOrientation="landscape">
+        </activity>
+        <activity
+                android:name=".SplashActivity"
+                android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".MainActivity"
+                android:screenOrientation="landscape">
+        </activity>
+
+        <meta-data
+                android:name="io.fabric.ApiKey"
+                android:value="6310d4c21bc3510a5d2f2491d9a27284ce904771"/>
+    </application>
+
+
+</manifest>

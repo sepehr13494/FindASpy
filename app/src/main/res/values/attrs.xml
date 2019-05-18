@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MyNumberPicker">
+        <attr name="default_number" format="integer"/>
+        <attr name="increase_count" format="integer"/>
+        <attr name="text_color" format="color"/>
+        <attr name="min_number" format="integer"/>
+        <attr name="max_number" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="MyCustomNumberPicker">
+        <attr name="myIcon" format="reference"/>
+        <attr name="text" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="FarBoldTv">
+        <attr name="autoSizeLines" format="integer"/>
+    </declare-styleable>
+
+</resources>

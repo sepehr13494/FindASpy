@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="normal_margin"> 16dp </dimen>
+    <dimen name="medium_margin"> 24dp </dimen>
+    <dimen name="big_margin"> 32dp </dimen>
+    <dimen name="very_big_margin"> 40dp </dimen>
+    <dimen name="extrim_big_margin"> 72dp </dimen>
+    <dimen name="dp54"> 62dp </dimen>
+    <dimen name="option_main"> 300dp </dimen>
+    <dimen name="text_h1"> 14sp </dimen>
+    <dimen name="text_h2"> 18sp </dimen>
+    <dimen name="text_h3"> 22sp </dimen>
+    <dimen name="text_h4"> 26sp </dimen>
+    <dimen name="text_h5"> 30sp </dimen>
+    <dimen name="text_h6"> 34sp </dimen>
+</resources>

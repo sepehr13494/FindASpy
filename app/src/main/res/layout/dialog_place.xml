@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             android:layout_width="match_parent"
+                                             android:id="@+id/dialogLayout"
+                                             android:layout_height="wrap_content"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/airport"
+            android:id="@+id/d_list_image" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline3" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="1:1"/>
+    <ir.boardbazi.findaspy.FarBoldTv
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_h3"
+            android:text="فرودگاه"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/d_list_text"
+            app:layout_constraintTop_toTopOf="@+id/d_list_image"
+            app:layout_constraintBottom_toBottomOf="@+id/d_list_image" app:layout_constraintVertical_bias="0.544"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <android.support.constraint.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/guideline3"
+            app:layout_constraintGuide_percent="0.8"/>
+    <TextView
+            android:background="@color/colorBlack"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:id="@+id/textView3" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

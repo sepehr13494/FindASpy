@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="places">
+        <item>فرودگاه</item>
+        <item>مسجد</item>
+        <item>آتشنشانی</item>
+        <item>کلانتری</item>
+        <item>رستوران</item>
+        <item>بیمارستان</item>
+        <item>سیرک</item>
+        <item>کافه</item>
+        <item>ساحل</item>
+        <item>هتل</item>
+        <item>بانک</item>
+        <item>آرایشگاه</item>
+        <item>سینما</item>
+        <item>کشتی</item>
+        <item>قطار</item>
+        <item>مدرسه</item>
+        <item>دانشگاه</item>
+        <item>شرکت</item>
+        <item>کارخانه</item>
+        <item>جنگل</item>
+        <item>موزه</item>
+        <item>کاخ</item>
+        <item>خیابان</item>
+        <item>پارک</item>
+        <item>استخر</item>
+    </string-array>
+</resources>
