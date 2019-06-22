@@ -1,6 +1,7 @@
 package ir.boardbazi.findaspy
 
 import android.graphics.Point
+import android.media.MediaPlayer
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -38,17 +39,13 @@ abstract class BaseActivity : AppCompatActivity(){
             // Note that system bars will only be "visible" if none of the
             // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
             if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
-                // TODO: The system bars are visible. Make any desired
-                // adjustments to your UI, such as showing the action bar or
-                // other navigational controls.
+
                 Handler().postDelayed({
                     hidenavBar()
                 }, 1500)
 
             } else {
-                // TODO: The system bars are NOT visible. Make any desired
-                // adjustments to your UI, such as hiding the action bar or
-                // other navigational controls.
+
             }
         }
     }
@@ -66,4 +63,5 @@ abstract class BaseActivity : AppCompatActivity(){
             }
         }
     }
+
 }

@@ -14,6 +14,7 @@
             android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="1:1"/>
     <ir.boardbazi.findaspy.FarBoldTv
+            android:layout_marginRight="@dimen/normal_margin"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/text_h3"
             android:text="فرودگاه"
@@ -22,13 +23,12 @@
             android:id="@+id/d_list_text"
             app:layout_constraintTop_toTopOf="@+id/d_list_image"
             app:layout_constraintBottom_toBottomOf="@+id/d_list_image" app:layout_constraintVertical_bias="0.544"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline3"/>
     <android.support.constraint.Guideline
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/guideline3"
-            app:layout_constraintGuide_percent="0.8"/>
+            app:layout_constraintGuide_percent="0.75"/>
     <TextView
             android:background="@color/colorBlack"
             android:layout_width="0dp"
@@ -36,5 +36,14 @@
             android:id="@+id/textView3" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintBottom_toBottomOf="parent"/>
+    <ImageView
+            android:layout_margin="@dimen/medium_margin"
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/green_check"
+            android:id="@+id/check_img"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/d_list_text" android:layout_marginEnd="8dp"
+            app:layout_constraintDimensionRatio="w,1:1" app:layout_constraintHorizontal_bias="0.0"/>
 
 </android.support.constraint.ConstraintLayout>

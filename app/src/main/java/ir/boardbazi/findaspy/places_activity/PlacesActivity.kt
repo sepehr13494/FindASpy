@@ -5,19 +5,22 @@ import android.content.Intent
 import android.graphics.Point
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import android.view.Window
 import android.widget.TextView
 import com.google.gson.Gson
-import ir.boardbazi.findaspy.BaseActivity
+import ir.boardbazi.findaspy.BaseActivity2
 import ir.boardbazi.findaspy.GameOption
+import ir.boardbazi.findaspy.MainActivity
+import ir.boardbazi.findaspy.MyApplication.Companion.hasMusic
 import ir.boardbazi.findaspy.R
 import ir.boardbazi.findaspy.game_activity.StartGameActivity
 
 import kotlinx.android.synthetic.main.activity_places.*
+import kotlinx.android.synthetic.main.place_dialog.*
 
-class PlacesActivity : BaseActivity() {
+class PlacesActivity : BaseActivity2() {
 
     private var width:Float = 0f
     private var height:Float = 0f
@@ -50,12 +53,12 @@ class PlacesActivity : BaseActivity() {
             dialog .setCancelable(true)
             dialog.setContentView(R.layout.place_dialog)
             dialog.window.setBackgroundDrawableResource(android.R.color.transparent)
-            dialog.window.setLayout(height.toInt(),(height*0.75).toInt())
-            dialog.findViewById<TextView>(R.id.d_place_text).text = "به تعداد ${gameOption.places.size} تا انتخاب کنید."
+            dialog.window.setLayout((height*1.5).toInt(),(height*0.90).toInt())
             val dRecyclerView = dialog.findViewById<RecyclerView>(R.id.dialog_recycler)
+            val savetv = dialog.findViewById<TextView>(R.id.save_tv)
             dRecyclerView.setHasFixedSize(true)
-            dRecyclerView.layoutManager = LinearLayoutManager(this)
-            val adapter = DialogPlaceAdapter(this,allPlaces,gameOption,this.adapter,replacedPlaces,recyclerView,dialog)
+            dRecyclerView.layoutManager = GridLayoutManager(this,2)
+            val adapter = DialogPlaceAdapter(this,allPlaces,gameOption,this.adapter,replacedPlaces,recyclerView,dialog,savetv)
             dRecyclerView.adapter = adapter
             dialog.show()
 
@@ -75,6 +78,13 @@ class PlacesActivity : BaseActivity() {
         display.getSize(size)
         width = size.x.toFloat()
         height = size.y.toFloat()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (hasMusic){
+            MainActivity.mediaPlayer.start()
+        }
     }
 
 }

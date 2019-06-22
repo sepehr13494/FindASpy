@@ -5,6 +5,7 @@
     <dimen name="big_margin"> 32dp </dimen>
     <dimen name="very_big_margin"> 40dp </dimen>
     <dimen name="extrim_big_margin"> 72dp </dimen>
+    <dimen name="super_big_margin"> 88dp </dimen>
     <dimen name="dp54"> 62dp </dimen>
     <dimen name="option_main"> 300dp </dimen>
     <dimen name="text_h1"> 14sp </dimen>

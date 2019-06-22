@@ -12,7 +12,8 @@
             android:background="@drawable/wood_bg"
             android:gravity="center"
             android:textSize="@dimen/text_h3"
-            android:text="نکته اخلاقی"
+            android:text="برای عادلانه شدن بازی گوشی رو بین خودتون بچرخونید"
+            app:autoSizeLines="1"
             android:layout_width="0dp"
             android:layout_height="@dimen/extrim_big_margin"
             android:id="@+id/point_tv"
@@ -21,7 +22,7 @@
             android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
     <ImageView
             android:layout_width="0dp"
-            android:layout_height="0dp" app:srcCompat="@drawable/wood_setting"
+            android:layout_height="0dp" app:srcCompat="@drawable/sound"
             android:id="@+id/setting_img"
             app:layout_constraintTop_toTopOf="@+id/point_tv" app:layout_constraintBottom_toBottomOf="@+id/point_tv"
             app:layout_constraintVertical_bias="1.0"
@@ -29,7 +30,7 @@
             android:layout_marginStart="8dp"/>
     <ImageView
             android:layout_width="0dp"
-            android:layout_height="0dp" app:srcCompat="@drawable/wood_close"
+            android:layout_height="0dp" app:srcCompat="@drawable/extit"
             android:id="@+id/exit_img"
             app:layout_constraintTop_toTopOf="@+id/point_tv" app:layout_constraintBottom_toBottomOf="@+id/point_tv"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"

@@ -3,9 +3,6 @@ package ir.boardbazi.findaspy.game_activity
 
 import android.os.Bundle
 
-import ir.boardbazi.findaspy.BaseActivity
-import ir.boardbazi.findaspy.R
-
 import kotlinx.android.synthetic.main.activity_start_game.*
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -23,14 +20,14 @@ import android.view.View
 import android.view.Window
 import android.widget.TextView
 import com.google.gson.Gson
-import ir.boardbazi.findaspy.GameOption
-import ir.boardbazi.findaspy.Roles
+import ir.boardbazi.findaspy.*
+import ir.boardbazi.findaspy.MyApplication.Companion.hasMusic
 import ir.boardbazi.findaspy.inGameActivity.InGameActivity
 import ir.boardbazi.findaspy.places_activity.Place
 import kotlin.random.Random
 
 
-class StartGameActivity : BaseActivity() {
+class StartGameActivity : BaseActivity2() {
 
     private var width:Float = 0f
     private var height:Float = 0f
@@ -45,6 +42,18 @@ class StartGameActivity : BaseActivity() {
         setContentView(R.layout.activity_start_game)
 
         mGetScreenSize()
+
+        setting_img.setOnClickListener {
+            if (MainActivity.mediaPlayer.isPlaying){
+                MainActivity.mediaPlayer.pause()
+                setting_img.setImageResource(R.drawable.nosound)
+                hasMusic = false
+            }else{
+                MainActivity.mediaPlayer.start()
+                setting_img.setImageResource(R.drawable.sound)
+                hasMusic = true
+            }
+        }
 
         group.visibility = View.GONE
 
@@ -199,5 +208,14 @@ class StartGameActivity : BaseActivity() {
         display.getSize(size)
         width = size.x.toFloat()
         height = size.y.toFloat()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!hasMusic){
+            setting_img.setImageResource(R.drawable.nosound)
+        }else{
+            MainActivity.mediaPlayer.start()
+        }
     }
 }

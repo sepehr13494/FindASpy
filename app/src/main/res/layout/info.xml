@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+                                             android:background="@drawable/result_bg"
+                                             android:padding ="@dimen/extrim_big_margin"
+                                             android:layout_height="match_parent">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+    >
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
+
+            <ir.boardbazi.findaspy.FarBoldTv
+                    android:id="@+id/videoLink"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/wood_btn_bg"
+                    android:layout_gravity="center_horizontal"
+                    android:text="لینک ویدئو آموزش بازی"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/extrim_big_margin"/>
+
+            <ir.boardbazi.findaspy.FarBoldTv
+                    android:id="@+id/howToPlaye_tv"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textSize="@dimen/text_h3"
+                      android:textColor="@color/colorBlack"
+                      android:text="@string/howToPlay"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

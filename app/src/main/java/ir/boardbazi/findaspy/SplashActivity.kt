@@ -33,8 +33,6 @@ class SplashActivity : BaseActivity() {
         getUpdate()
 
 
-
-
     }
 
     private fun getUpdate() {

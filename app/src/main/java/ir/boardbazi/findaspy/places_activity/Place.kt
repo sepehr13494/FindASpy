@@ -38,4 +38,16 @@ class Place(var icon:Int,var name:String) {
         }
     }
 
+    override fun equals(other: Any?): Boolean {
+        if (other is Place){
+            return other.name == this.name
+        }else{
+            return false
+        }
+    }
+
+    override fun hashCode(): Int {
+        return this.name.hashCode()
+    }
+
 }

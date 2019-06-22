@@ -8,6 +8,7 @@
 
 
     <TextView
+            app:layout_goneMarginTop="@dimen/extrim_big_margin"
             android:layout_marginTop="@dimen/extrim_big_margin"
             android:gravity="center"
             android:text="ادامه"
@@ -18,8 +19,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/d_continue" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/d_result" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"/>
     <TextView
+            android:layout_marginTop="@dimen/normal_margin"
             android:gravity="center"
             android:text="نتیجه"
             android:textColor="@color/colorWhite"
@@ -32,6 +35,7 @@
             app:layout_constraintBottom_toTopOf="@+id/d_exit" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
+            android:layout_marginTop="@dimen/normal_margin"
             android:layout_marginBottom="@dimen/extrim_big_margin"
             android:gravity="center"
             android:text="خروج"
