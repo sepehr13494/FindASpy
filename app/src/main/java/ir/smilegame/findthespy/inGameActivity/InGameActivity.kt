@@ -168,7 +168,7 @@ class InGameActivity : BaseActivity2() {
 
             override fun onClosed() {
                 super.onClosed()
-                if(!rewarded) {
+                if(rewarded) {
                     dialog.cancel()
                     gameOption.places.shuffle()
                     for(place:Place in gameOption.places){
