@@ -1,172 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="match_parent"
-                                             android:background="@drawable/wall_bg"
-                                             tools:context=".MainActivity">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/wall_bg"
+        tools:context=".MainActivity">
 
-    <android.support.constraint.ConstraintLayout
-            android:paddingRight="@dimen/normal_margin"
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
+            android:background="@drawable/main_bg"
             android:paddingLeft="@dimen/normal_margin"
             android:paddingTop="@dimen/big_margin"
-            android:background="@drawable/main_bg"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            android:paddingRight="@dimen/normal_margin"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginEnd="@dimen/normal_margin"
-            android:layout_marginStart="@dimen/normal_margin"
             app:layout_constraintHorizontal_bias="1.0"
-            android:id="@+id/constraintLayout">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <ir.boardbazi.findaspy.MyCustomNumberPicker
-                app:min_number="5"
-                app:max_number="60"
+        <ir.smilegame.findthespy.MyCustomNumberPicker
+                android:id="@+id/time_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 app:default_number="10"
                 app:increase_count="5"
-                app:myIcon="@drawable/time"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/spy_picker"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/place_picker"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.87"
+                app:max_number="60"
+                app:min_number="5"
+                app:myIcon="@drawable/time" />
+
+        <ir.smilegame.findthespy.MyCustomNumberPicker
+                android:id="@+id/place_picker"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/time_picker"
-                app:layout_constraintStart_toEndOf="@+id/place_picker" app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintEnd_toStartOf="@+id/spy_picker"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.87"/>
-
-        <ir.boardbazi.findaspy.MyCustomNumberPicker
-                app:min_number="4"
-                app:max_number="24"
+                android:layout_marginStart="8dp"
                 app:default_number="12"
                 app:increase_count="4"
-                app:text="مکان ها"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/place_picker"
-                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/time_picker"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.87"/>
+                app:layout_constraintVertical_bias="0.87"
+                app:max_number="24"
+                app:min_number="4"
+                app:text="مکان ها" />
 
-        <ir.boardbazi.findaspy.MyCustomNumberPicker
-                app:min_number="1"
-                app:max_number="2"
-                app:default_number="1"
-                app:myIcon="@drawable/spy"
+        <ir.smilegame.findthespy.MyCustomNumberPicker
+                android:id="@+id/spy_picker"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/spy_picker"
-                app:layout_constraintStart_toEndOf="@+id/time_picker" app:layout_constraintHorizontal_bias="0.5"
+                app:default_number="1"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/player_picker"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.87"/>
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/time_picker"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.87"
+                app:max_number="2"
+                app:min_number="1"
+                app:myIcon="@drawable/spy" />
 
-        <ir.boardbazi.findaspy.MyCustomNumberPicker
+        <ir.smilegame.findthespy.MyCustomNumberPicker
+                android:id="@+id/player_picker"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:default_number="4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/spy_picker"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.87"
                 app:max_number="8"
                 app:min_number="2"
-                app:default_number="4"
-                app:myIcon="@drawable/person"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/player_picker"
-                app:layout_constraintStart_toEndOf="@+id/spy_picker"
-                app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginEnd="8dp" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.87"/>
+                app:myIcon="@drawable/person" />
 
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ImageView
-            app:layout_constraintHorizontal_weight="2"
-            android:layout_width="0dp"
-            android:layout_height="0dp" tools:srcCompat="@drawable/a8person"
             android:id="@+id/person_img"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="@+id/guideline5" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"/>
-    <Button
-            app:layout_constraintVertical_weight="2"
-            android:onClick="startGame"
-            android:background="@drawable/start_btn"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/start_btn" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/person_img" android:layout_marginEnd="8dp"
-            app:layout_constraintStart_toEndOf="@+id/spy_img" android:layout_marginStart="8dp"
-            app:layout_constraintDimensionRatio="1:1" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            app:layout_constraintVertical_bias="0.75"/>
-    <ImageView
-            app:layout_constraintHorizontal_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="0dp" tools:srcCompat="@drawable/spy2"
-            android:id="@+id/spy_img"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:srcCompat="@drawable/a8person" />
+
+    <Button
+            android:id="@+id/start_btn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/start_btn"
+            android:onClick="startGame"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/person_img"
+            app:layout_constraintStart_toEndOf="@+id/spy_img"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintVertical_bias="0.75"
+            app:layout_constraintVertical_weight="2" />
+
+    <ImageView
+            android:id="@+id/spy_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintDimensionRatio="h,1:1"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="@+id/guideline"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/guideline2"
-            app:layout_constraintEnd_toStartOf="@+id/guideline4" android:layout_marginEnd="8dp"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            tools:srcCompat="@drawable/spy2" />
+
     <ImageView
-            app:layout_constraintVertical_weight="1"
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:paddingTop="@dimen/medium_margin"
-            android:layout_width="0dp"
-            android:layout_height="0dp" app:srcCompat="@drawable/vs"
-            android:id="@+id/imageView2" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/start_btn" app:layout_constraintEnd_toStartOf="@+id/person_img"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toEndOf="@+id/spy_img"
-            android:layout_marginStart="8dp"/>
-    <android.support.constraint.Guideline
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/guideline"
-            app:layout_constraintGuide_percent="0.4"/>
-    <android.support.constraint.Guideline
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/guideline2"
-            app:layout_constraintGuide_percent="0.92"/>
-    <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp" app:srcCompat="@drawable/sound"
-            android:id="@+id/setting_img" android:layout_marginTop="@dimen/normal_margin"
+            app:layout_constraintBottom_toTopOf="@+id/start_btn"
+            app:layout_constraintEnd_toStartOf="@+id/person_img"
+            app:layout_constraintStart_toEndOf="@+id/spy_img"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            app:layout_constraintBottom_toTopOf="@+id/guideline" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="24dp" app:layout_constraintDimensionRatio="1:1"
-    />
-    <ImageView
-            android:layout_width="0dp"
-            app:srcCompat="@drawable/info"
-            android:id="@+id/info_img" android:layout_marginTop="@dimen/normal_margin"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            app:layout_constraintStart_toEndOf="@+id/setting_img" android:layout_marginStart="8dp"
-            android:layout_height="0dp" app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"/>
-    <android.support.constraint.Guideline
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/guideline4"
-            app:layout_constraintGuide_percent="0.28180575"/>
-    <android.support.constraint.Guideline
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/guideline5"
-            app:layout_constraintGuide_percent="0.5"/>
-    <ir.boardbazi.findaspy.FarBoldTv
-            android:layout_marginRight="@dimen/big_margin"
-            android:text="مجموع دو آیتم بالا باید برابر با کل بازیکن ها شود"
+            app:layout_constraintVertical_weight="1"
+            app:srcCompat="@drawable/vs" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" app:layout_constraintEnd_toEndOf="parent"/>
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
 
-</android.support.constraint.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.92" />
+
+    <ImageView
+            android:id="@+id/setting_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="@dimen/normal_margin"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/info_img"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:srcCompat="@drawable/sound" />
+
+    <ImageView
+            android:id="@+id/info_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/normal_margin"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/smile_img"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/setting_img"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:srcCompat="@drawable/info" />
+
+    <ImageView
+            android:id="@+id/smile_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/normal_margin"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/info_img"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:srcCompat="@drawable/smileround" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.28180575" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    <ir.smilegame.findthespy.FarBoldTv
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="@dimen/big_margin"
+            android:text="مجموع دو آیتم بالا باید برابر با کل بازیکن ها شود"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

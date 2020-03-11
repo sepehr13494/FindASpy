@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:background="@drawable/result_bg" android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:padding="@dimen/medium_margin"
             android:layout_width="0dp"
             android:layout_height="0dp" android:background="@drawable/card_frame"
@@ -30,7 +30,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/d_place_name"
                 app:layout_constraintVertical_chainStyle="packed"/>
 
-        <ir.boardbazi.findaspy.FarBoldTv
+        <ir.smilegame.findthespy.FarBoldTv
                 app:autoSizeLines="1"
                 android:textSize="@dimen/text_h2"
                 android:layout_gravity="center_horizontal"
@@ -43,8 +43,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.5"/>
 
-    </android.support.constraint.ConstraintLayout>
-    <ir.boardbazi.findaspy.FarBoldTv
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ir.smilegame.findthespy.FarBoldTv
             app:autoSizeLines="1"
             android:text="جاسوس ها"
             android:textSize="@dimen/text_h3"
@@ -57,7 +57,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_bias="0.64" app:layout_constraintEnd_toStartOf="@+id/card_img"
             app:layout_constraintHorizontal_chainStyle="packed" android:layout_marginEnd="16dp"/>
-    <ir.boardbazi.findaspy.FarBoldTv
+    <ir.smilegame.findthespy.FarBoldTv
             android:textColor="@color/colorRed"
             android:textSize="@dimen/text_h2"
             android:text="بازیکن 1"
@@ -68,7 +68,7 @@
             app:layout_constraintBottom_toTopOf="@+id/d_second_spy_tv" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginBottom="8dp" app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintEnd_toStartOf="@+id/card_img" android:layout_marginEnd="16dp"/>
-    <ir.boardbazi.findaspy.FarBoldTv
+    <ir.smilegame.findthespy.FarBoldTv
             android:visibility="gone"
             android:textColor="@color/colorRed"
             android:textSize="@dimen/text_h2"
@@ -81,7 +81,7 @@
             android:layout_marginEnd="16dp" app:layout_constraintEnd_toStartOf="@+id/card_img"
             app:layout_constraintHorizontal_bias="1.0"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/d_ok_btn"/>
-    <ir.boardbazi.findaspy.FarBoldTv
+    <ir.smilegame.findthespy.FarBoldTv
             android:gravity="center"
             android:text="باشه"
             android:textColor="@color/colorWhite"
@@ -94,4 +94,4 @@
             app:layout_constraintBottom_toBottomOf="@+id/card_img" android:layout_marginStart="@dimen/extrim_big_margin"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintDimensionRatio="2.5:1"/>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

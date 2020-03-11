@@ -1,74 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="@drawable/gray_bg"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/gray_bg"
         tools:context=".inGameActivity.InGameActivity">
-    <ir.boardbazi.findaspy.FarBoldTv
-            android:textColor="@color/colorWhite"
-            android:background="@drawable/wood_bg"
-            android:gravity="center"
-            android:textSize="@dimen/text_h3"
-            android:text="برای عادلانه شدن بازی گوشی رو بین خودتون بچرخونید"
-            app:autoSizeLines="1"
+
+    <ir.smilegame.findthespy.FarBoldTv
+            android:id="@+id/point_tv"
             android:layout_width="0dp"
             android:layout_height="@dimen/extrim_big_margin"
-            android:id="@+id/point_tv"
-            app:layout_constraintStart_toEndOf="@+id/setting_img" android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/exit_img"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/wood_bg"
+            android:gravity="center"
+            android:text="برای عادلانه شدن بازی گوشی رو بین خودتون بچرخونید"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_h3"
+            app:autoSizeLines="1"
+            app:layout_constraintEnd_toStartOf="@+id/exit_img"
+            app:layout_constraintStart_toEndOf="@+id/setting_img"
+            app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp" app:srcCompat="@drawable/sound"
             android:id="@+id/setting_img"
-            app:layout_constraintTop_toTopOf="@+id/point_tv" app:layout_constraintBottom_toBottomOf="@+id/point_tv"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintDimensionRatio="1:1" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"/>
-    <ImageView
             android:layout_width="0dp"
-            android:layout_height="0dp" app:srcCompat="@drawable/extit"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/point_tv"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/point_tv"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/sound" />
+
+    <ImageView
             android:id="@+id/exit_img"
-            app:layout_constraintTop_toTopOf="@+id/point_tv" app:layout_constraintBottom_toBottomOf="@+id/point_tv"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintDimensionRatio="1:1"/>
-    <ir.boardbazi.findaspy.FarBoldTv
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/point_tv"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/point_tv"
+            app:srcCompat="@drawable/extit" />
+
+    <ir.smilegame.findthespy.FarBoldTv
+            android:id="@+id/second_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text=":52"
             android:textSize="@dimen/text_h3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/second_tv"
-            app:layout_constraintStart_toEndOf="@+id/minute_tv" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toStartOf="@+id/imageView6" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/point_tv"/>
-    <android.support.v7.widget.RecyclerView
+            app:layout_constraintBaseline_toBaselineOf="@+id/minute_tv"
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/minute_tv" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="0dp"
-            android:layout_height="0dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/second_tv" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/recyclerView"/>
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/second_tv" />
+
     <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp" app:srcCompat="@drawable/time"
             android:id="@+id/imageView6"
-            app:layout_constraintTop_toTopOf="@+id/second_tv" app:layout_constraintBottom_toBottomOf="@+id/second_tv"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toEndOf="@+id/second_tv" app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"/>
-    <ir.boardbazi.findaspy.FarBoldTv
-            android:textSize="@dimen/text_h3"
-            android:text="12"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toStartOf="@+id/optiontv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/second_tv"
+            app:layout_constraintTop_toBottomOf="@+id/point_tv"
+            app:srcCompat="@drawable/time" />
+
+    <ir.smilegame.findthespy.FarBoldTv
+            android:id="@+id/minute_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/minute_tv"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            android:text="12"
+            android:textSize="@dimen/text_h3"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
             app:layout_constraintEnd_toStartOf="@+id/second_tv"
-            app:layout_constraintHorizontal_chainStyle="packed" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/point_tv"/>
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/point_tv" />
+
+    <ir.smilegame.findthespy.FarBoldTv
+            android:background="@color/colorRed"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_h1"
+            android:padding="8dp"
+            android:gravity="center"
+            android:drawablePadding="8dp"
+            android:drawableEnd="@drawable/smallinfo"
+            android:id="@+id/optiontv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="آبشن جدید و باحال"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/point_tv" />
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

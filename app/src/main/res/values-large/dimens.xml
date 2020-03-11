@@ -8,6 +8,7 @@
     <dimen name="super_big_margin"> 88dp </dimen>
     <dimen name="dp54"> 62dp </dimen>
     <dimen name="option_main"> 300dp </dimen>
+    <dimen name="dp200"> 250dp </dimen>
     <dimen name="text_h1"> 14sp </dimen>
     <dimen name="text_h2"> 18sp </dimen>
     <dimen name="text_h3"> 22sp </dimen>

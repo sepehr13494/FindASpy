@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              android:layout_width="match_parent"
                                              android:id="@+id/dialogLayout"
                                              android:layout_height="wrap_content"
@@ -13,7 +13,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline3" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="1:1"/>
-    <ir.boardbazi.findaspy.FarBoldTv
+    <ir.smilegame.findthespy.FarBoldTv
             android:layout_marginRight="@dimen/normal_margin"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/text_h3"
@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="@+id/d_list_image"
             app:layout_constraintBottom_toBottomOf="@+id/d_list_image" app:layout_constraintVertical_bias="0.544"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline3"/>
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/guideline3"
@@ -46,4 +46,4 @@
             app:layout_constraintEnd_toStartOf="@+id/d_list_text" android:layout_marginEnd="8dp"
             app:layout_constraintDimensionRatio="w,1:1" app:layout_constraintHorizontal_bias="0.0"/>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

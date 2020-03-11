@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
-    <ir.boardbazi.findaspy.FarBoldTv
+    <ir.smilegame.findthespy.FarBoldTv
             android:textSize="@dimen/text_h3"
             android:textStyle="bold"
             android:gravity="center"
@@ -41,4 +41,4 @@
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="1:1"
             android:layout_marginStart="8dp"
             app:layout_constraintHorizontal_chainStyle="spread_inside"/>
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

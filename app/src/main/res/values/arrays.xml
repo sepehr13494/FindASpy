@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="places">
+    <string-array name="main">
+        <item>فرودگاه</item>
+        <item>مسجد</item>
+        <item>آتشنشانی</item>
+        <item>کلانتری</item>
+        <item>رستوران</item>
+        <item>بیمارستان</item>
+        <item>سیرک</item>
+        <item>کافه</item>
+        <item>ساحل</item>
+        <item>هتل</item>
+        <item>بانک</item>
+        <item>آرایشگاه</item>
+        <item>سینما</item>
+        <item>کشتی</item>
+        <item>قطار</item>
+        <item>مدرسه</item>
+        <item>دانشگاه</item>
+        <item>شرکت</item>
+        <item>کارخانه</item>
+        <item>جنگل</item>
+        <item>موزه</item>
+        <item>کاخ</item>
+        <item>خیابان</item>
+        <item>پارک</item>
+        <item>استخر</item>
+    </string-array>
+
+    <string-array name="iran">
+        <item>کوه دماوند</item>
+        <item>سی و سه پل</item>
+        <item>برج میلاد</item>
+        <item>دریاچه ارومیه</item>
+        <item>دریای خزر</item>
+        <item>رود کارون</item>
+        <item>کویر مصر</item>
+        <item>ارگ بم</item>
+        <item>میدان آزادی</item>
+        <item>غار علیصدر</item>
+        <item>تخت جمشید</item>
+        <item>جاده چالوس</item>
+        <item>نقش جهان</item>
+        <item>آرامگاه حافظ</item>
+        <item>آرامگاه کوروش</item>
+        <item>حمام فین</item>
+        <item>تنگه واشی</item>
+        <item>نارین قلعه</item>
+        <item>بازار تهران</item>
+        <item>تنکابن</item>
+        <item>جنگل ابر</item>
+        <item>آتشکده یزد</item>
+        <item>منار جنبان</item>
+        <item>کویر مرنجاب</item>
+    </string-array>
+
+    <string-array name="foods">
         <item>فرودگاه</item>
         <item>مسجد</item>
         <item>آتشنشانی</item>

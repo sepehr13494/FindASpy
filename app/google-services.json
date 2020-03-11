@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "961346822250",
-    "firebase_url": "https://findaspy.firebaseio.com",
-    "project_id": "findaspy",
-    "storage_bucket": "findaspy.appspot.com"
+    "project_number": "392050983464",
+    "firebase_url": "https://findthespy-cfd60.firebaseio.com",
+    "project_id": "findthespy-cfd60",
+    "storage_bucket": "findthespy-cfd60.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:961346822250:android:264bbb6aa3634535",
+        "mobilesdk_app_id": "1:392050983464:android:c3d3ad026181bc79c76b1d",
         "android_client_info": {
-          "package_name": "ir.boardbazi.findaspy"
+          "package_name": "ir.smilegame.findthespy"
         }
       },
       "oauth_client": [
         {
-          "client_id": "961346822250-l019rujodnr8jb4hbjp0ovdosv0065qg.apps.googleusercontent.com",
+          "client_id": "392050983464-moi3o2cmbvbhgugrmteu24i9d8ekg3am.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDj65Xw2MY1Yz4amrL8dxmJ2guOgh1EAl0"
+          "current_key": "AIzaSyDeJyKvmftnWuykHq7IVN8iuqAsDs4krSw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "961346822250-l019rujodnr8jb4hbjp0ovdosv0065qg.apps.googleusercontent.com",
+              "client_id": "392050983464-moi3o2cmbvbhgugrmteu24i9d8ekg3am.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

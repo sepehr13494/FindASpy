@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="ir.boardbazi.findaspy">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="ir.smilegame.findthespy">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-            android:name=".MyApplication"
+            android:name="ir.smilegame.findthespy.MyApplication"
             android:allowBackup="true"
             android:icon="@drawable/logo"
             android:label="@string/app_name"
@@ -14,41 +15,34 @@
             android:roundIcon="@drawable/logo"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".inGameActivity.InGameActivity"
-        android:screenOrientation="landscape"
-        android:configChanges="orientation|screenSize">
-        </activity>
+        <activity android:name="ir.smilegame.findthespy.package_activity.PackageActivity"
+                android:screenOrientation="landscape"></activity>
         <activity
-                android:name=".game_activity.StartGameActivity"
-                android:screenOrientation="landscape"
-                android:configChanges="orientation|screenSize">
-        </activity>
+                android:name="ir.smilegame.findthespy.inGameActivity.InGameActivity"
+                android:configChanges="orientation|screenSize"
+                android:screenOrientation="landscape"></activity>
         <activity
-                android:name=".places_activity.PlacesActivity"
-                android:screenOrientation="landscape">
-        </activity>
+                android:name="ir.smilegame.findthespy.game_activity.StartGameActivity"
+                android:configChanges="orientation|screenSize"
+                android:screenOrientation="landscape"></activity>
         <activity
-                android:name=".SplashActivity"
+                android:name="ir.smilegame.findthespy.places_activity.PlacesActivity"
+                android:screenOrientation="landscape"></activity>
+        <activity
+                android:name="ir.smilegame.findthespy.SplashActivity"
                 android:screenOrientation="landscape">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-                android:name=".MainActivity"
-                android:screenOrientation="landscape">
-        </activity>
-
-        <activity android:name="ir.tapsell.sdk.TapsellAdActivity"
-                  android:configChanges="keyboardHidden|orientation|screenSize" >
-        </activity>
-
-        <meta-data
-                android:name="io.fabric.ApiKey"
-                android:value="6310d4c21bc3510a5d2f2491d9a27284ce904771"/>
+                android:name="ir.smilegame.findthespy.MainActivity"
+                android:screenOrientation="landscape"></activity>
+        <activity
+                android:name="ir.tapsell.sdk.TapsellAdActivity"
+                android:configChanges="keyboardHidden|orientation|screenSize"></activity>
     </application>
-
 
 </manifest>

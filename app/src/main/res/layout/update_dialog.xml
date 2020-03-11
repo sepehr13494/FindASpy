@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:background="@drawable/result_bg"
@@ -11,7 +11,7 @@
                                              android:layout_height="match_parent">
 
 
-    <ir.boardbazi.findaspy.FarBoldTv
+    <ir.smilegame.findthespy.FarBoldTv
             android:text="آپدیت جدید موجود میباشد لطفا از لینک زیر اقدام کنید"
             android:textSize="@dimen/text_h2"
             android:textColor="@color/colorBlack"
@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/link_btn" app:layout_constraintStart_toStartOf="parent"
     />
-    <ir.boardbazi.findaspy.FarBoldTv
+    <ir.smilegame.findthespy.FarBoldTv
             android:gravity="center"
             android:text="بعدا"
             android:textColor="@color/colorWhite"
@@ -36,7 +36,7 @@
             android:layout_marginStart="8dp"
             app:layout_constraintTop_toTopOf="@+id/link_btn" app:layout_constraintBottom_toBottomOf="@+id/link_btn"
             app:layout_constraintDimensionRatio="2:1"/>
-    <ir.boardbazi.findaspy.FarBoldTv
+    <ir.smilegame.findthespy.FarBoldTv
             android:gravity="center"
             android:text="برو به لینک"
             android:textColor="@color/colorWhite"
@@ -50,4 +50,4 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp" app:layout_constraintDimensionRatio="w,2:1"/>
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
