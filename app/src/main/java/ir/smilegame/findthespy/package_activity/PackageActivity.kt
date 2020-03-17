@@ -3,7 +3,9 @@ package ir.smilegame.findthespy.package_activity
 import android.app.Dialog
 import android.content.Intent
 import android.graphics.Point
+import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import android.widget.TextView
 import android.widget.Toast
@@ -166,5 +168,10 @@ class PackageActivity : BaseActivity2() {
                 }
             })
 
+    }
+
+    fun openForm(view: View) {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLSdyD5cduzaIAC4Y6C4DtcXUmXydW44wRRrkZujdX7yY6Q7njA/viewform?usp=sf_link"))
+        startActivity(browserIntent)
     }
 }
