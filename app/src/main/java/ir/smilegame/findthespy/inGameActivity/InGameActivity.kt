@@ -32,7 +32,7 @@ import java.util.logging.Logger
 import kotlin.random.Random
 
 
-class InGameActivity : BaseActivity2() {
+class InGameActivity : CafeBazaarActivity() {
 
     private var width:Float = 0f
     private var height:Float = 0f
@@ -101,6 +101,8 @@ class InGameActivity : BaseActivity2() {
 
     }
 
+    override fun onSubscribeChange() {}
+
     fun goForOption(){
         dialog = Dialog(this@InGameActivity)
         dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -108,20 +110,35 @@ class InGameActivity : BaseActivity2() {
         dialog.setContentView(R.layout.update_dialog)
         dialog.window.setBackgroundDrawableResource(android.R.color.transparent)
         dialog.window.setLayout(height.toInt(),(height*0.65).toInt())
-        dialog.findViewById<TextView>(R.id.textView5).text = "میتونید با دیدن یک تبلیغ از یک شهروند رو نمایی کنید ولی به همان نسبت از کارت ها حذف میشود"
-        dialog.findViewById<TextView>(R.id.later_btn).text = "دیدن تبلیغ"
-        dialog.findViewById<TextView>(R.id.later_btn).setOnClickListener{
-            if (((gameOption.places.size)/(gameOption.persons-outPlayers.size))>=gameOption.places.size || (gameOption.persons-outPlayers.size)==1){
-                Toast.makeText(applicationContext,"دیگه جا نداره", Toast.LENGTH_SHORT).show()
-            }else{
-                showAd()
-                Toast.makeText(applicationContext,"در حال آماده سازی", Toast.LENGTH_SHORT).show()
-            }
 
+        if (hasSubscribe){
+            dialog.findViewById<TextView>(R.id.textView5).text = "میتونید از یک شهروند رو نمایی کنید ولی به همان نسبت از کارت ها حذف میشود"
+            dialog.findViewById<TextView>(R.id.later_btn).text = "باشه انجام بشه"
+            dialog.findViewById<TextView>(R.id.later_btn).setOnClickListener{
+                if (((gameOption.places.size)/(gameOption.persons-outPlayers.size))>=gameOption.places.size || (gameOption.persons-outPlayers.size)==1){
+                    Toast.makeText(applicationContext,"دیگه جا نداره", Toast.LENGTH_SHORT).show()
+                }else{
+                    showOnePerson()
+                }
+
+            }
+        }else{
+            dialog.findViewById<TextView>(R.id.textView5).text = "میتونید با دیدن یک تبلیغ از یک شهروند رو نمایی کنید ولی به همان نسبت از کارت ها حذف میشود"
+            dialog.findViewById<TextView>(R.id.later_btn).text = "دیدن تبلیغ"
+            dialog.findViewById<TextView>(R.id.later_btn).setOnClickListener{
+                if (((gameOption.places.size)/(gameOption.persons-outPlayers.size))>=gameOption.places.size || (gameOption.persons-outPlayers.size)==1){
+                    Toast.makeText(applicationContext,"دیگه جا نداره", Toast.LENGTH_SHORT).show()
+                }else{
+                    showAd()
+                    Toast.makeText(applicationContext,"در حال آماده سازی", Toast.LENGTH_SHORT).show()
+                }
+
+            }
         }
         dialog.findViewById<TextView>(R.id.link_btn).text = "لغو"
         dialog.findViewById<TextView>(R.id.link_btn).setOnClickListener {
             dialog.cancel()
+            resume()
         }
         dialog.show()
     }
@@ -169,44 +186,7 @@ class InGameActivity : BaseActivity2() {
             override fun onClosed() {
                 super.onClosed()
                 if(rewarded) {
-                    dialog.cancel()
-                    gameOption.places.shuffle()
-                    for(place:Place in gameOption.places){
-                        if(place.name == roles.place.name){
-                            gameOption.places.remove(place)
-                            break
-                        }
-                    }
-                    for(i in 0 until ((gameOption.places.size+1)/(gameOption.persons-outPlayers.size))){
-                        Logger.getLogger("kooooze").warning(i.toString())
-                        gameOption.places.removeAt(i)
-                    }
-                    gameOption.places.add(roles.place)
-                    gameOption.places.shuffle()
-                    adapter = PlaceAdapter(this@InGameActivity,gameOption.places)
-                    recyclerView.adapter = adapter
-                    var find = false
-                    var k:Int
-                    do {
-                        k = Random.nextInt(1,roles.players.size)
-                        Logger.getLogger("koooo").warning(k.toString())
-                        if(roles.players[k-1] != "جاسوس" && !outPlayers.contains(k)){
-                            find = true
-                            outPlayers.add(k)
-                        }
-                    }while (!find)
-                    val dialog = Dialog(this@InGameActivity)
-                    dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
-                    dialog .setCancelable(false)
-                    dialog.setContentView(R.layout.new_option)
-                    dialog.window.setBackgroundDrawableResource(android.R.color.transparent)
-                    dialog.window.setLayout(height.toInt(),(height*0.75).toInt())
-                    dialog.findViewById<TextView>(R.id.newOptiontv).text = "بازیکن $k جاسوس نیست"
-                    dialog.findViewById<TextView>(R.id.newOptionBtn).setOnClickListener{
-                        dialog.dismiss()
-                        resume()
-                    }
-                    dialog.show()
+                    showOnePerson()
                 }else{
                     resume()
                 }
@@ -247,10 +227,51 @@ class InGameActivity : BaseActivity2() {
 
     }
 
+    private fun showOnePerson() {
+        dialog.cancel()
+        gameOption.places.shuffle()
+        for(place:Place in gameOption.places){
+            if(place.name == roles.place.name){
+                gameOption.places.remove(place)
+                break
+            }
+        }
+        for(i in 0 until ((gameOption.places.size+1)/(gameOption.persons-outPlayers.size))){
+            Logger.getLogger("kooooze").warning(i.toString())
+            gameOption.places.removeAt(i)
+        }
+        gameOption.places.add(roles.place)
+        gameOption.places.shuffle()
+        adapter = PlaceAdapter(this@InGameActivity,gameOption.places)
+        recyclerView.adapter = adapter
+        var find = false
+        var k:Int
+        do {
+            k = Random.nextInt(1,roles.players.size)
+            Logger.getLogger("koooo").warning(k.toString())
+            if(roles.players[k-1] != "جاسوس" && !outPlayers.contains(k)){
+                find = true
+                outPlayers.add(k)
+            }
+        }while (!find)
+        val dialog = Dialog(this@InGameActivity)
+        dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog .setCancelable(false)
+        dialog.setContentView(R.layout.new_option)
+        dialog.window.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.window.setLayout(height.toInt(),(height*0.75).toInt())
+        dialog.findViewById<TextView>(R.id.newOptiontv).text = "بازیکن $k جاسوس نیست"
+        dialog.findViewById<TextView>(R.id.newOptionBtn).setOnClickListener{
+            dialog.dismiss()
+            resume()
+        }
+        dialog.show()
+    }
+
     private fun onfinish() {
         var i = prefrence?.getInt("count",0)
         i = i?.plus(1)
-        if (i != null) {
+        /*if (i != null) {
             if (i==2){
                 dialog = Dialog(this@InGameActivity)
                 dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -273,7 +294,7 @@ class InGameActivity : BaseActivity2() {
             var editor = prefrence?.edit()
             editor?.putInt("count",i)
             editor?.apply()
-        }
+        }*/
         this@InGameActivity.finish()
     }
 

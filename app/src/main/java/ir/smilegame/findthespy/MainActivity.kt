@@ -11,16 +11,22 @@ import androidx.core.content.ContextCompat
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
+import android.util.Log
 import android.view.View
+import android.view.View.GONE
+import android.view.View.INVISIBLE
 import android.view.Window
 import android.widget.TextView
+import ir.cafebazaar.poolakey.request.PurchaseRequest
 import ir.smilegame.findthespy.MyApplication.Companion.hasMusic
 import ir.smilegame.findthespy.package_activity.PackageActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.setting_img
 
 
-class MainActivity : BaseActivity2() {
+class MainActivity : CafeBazaarActivity() {
+
+    private val TAG = "MainActivity"
 
     companion object {
         lateinit var mediaPlayer: MediaPlayer
@@ -38,6 +44,7 @@ class MainActivity : BaseActivity2() {
     var persons = 4
     var spys = 1
     var places_count = 12
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +66,28 @@ class MainActivity : BaseActivity2() {
                 hasMusic = true
             }
         }
+
+        purchase_image.setOnClickListener {
+
+            val purchaseRequest = PurchaseRequest(
+                productId = "3months",
+                requestCode = 1000,
+                payload = ""
+            )
+
+            payment.subscribeProduct(
+                activity = this,
+                request = purchaseRequest
+            ) {
+                purchaseFlowBegan {
+                    Log.d(TAG, "onCreate: purchase begin")
+                }
+                failedToBeginFlow { throwable ->
+                    Log.d(TAG, "onCreate: purchase failed "+throwable.message)
+                }
+            }
+        }
+
         mediaPlayer.setOnCompletionListener {
             mediaPlayer.start()
         }
@@ -120,12 +149,13 @@ class MainActivity : BaseActivity2() {
 
         }
 
-        smile_img.setOnClickListener {
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://cafebazaar.ir/app/com.smile.game"))
-            startActivity(browserIntent)
+    }
+
+    override fun onSubscribeChange() {
+        if (hasSubscribe){
+            purchase_image.visibility = INVISIBLE
+            purchase_image.setOnClickListener {  }
         }
-
-
     }
 
     fun startGame(view: View){
@@ -162,6 +192,25 @@ class MainActivity : BaseActivity2() {
         }
         mediaPlayer.release()
         counter = 1
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1000){
+            payment.onActivityResult(requestCode, resultCode, data) {
+                purchaseSucceed { purchaseEntity ->
+                    Log.d("purchase result", "onActivityResult: " + purchaseEntity.originalJson)
+                    purchase_image.visibility = INVISIBLE
+                    purchase_image.setOnClickListener {  }
+                }
+                purchaseCanceled {
+                    Log.d("purchase result", "onActivityResult: canceled")
+                }
+                purchaseFailed { throwable ->
+                    Log.d("purchase result", "onActivityResult: failed" + throwable.message)
+                }
+            }
+        }
     }
 
 }

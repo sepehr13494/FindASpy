@@ -1,1 +1,2 @@
+include ':poolakey'
 include ':app'

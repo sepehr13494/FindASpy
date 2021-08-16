@@ -4,15 +4,16 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.PersistableBundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
+import ir.cafebazaar.poolakey.Connection
+import ir.cafebazaar.poolakey.Payment
+import ir.cafebazaar.poolakey.config.PaymentConfiguration
+import ir.cafebazaar.poolakey.config.SecurityCheck
 
 abstract class BaseActivity : AppCompatActivity(){
     var ready = true
-
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-    }
 
     override fun onResume() {
         super.onResume()

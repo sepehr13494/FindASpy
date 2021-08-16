@@ -5,12 +5,17 @@ import android.content.Intent
 import android.graphics.Point
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.Window
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.gson.Gson
+import ir.cafebazaar.poolakey.Connection
+import ir.cafebazaar.poolakey.Payment
+import ir.cafebazaar.poolakey.request.PurchaseRequest
 import ir.smilegame.findthespy.*
 import ir.smilegame.findthespy.R
 
@@ -22,14 +27,15 @@ import kotlinx.android.synthetic.main.activity_package.recyclerView
 import ir.tapsell.sdk.TapsellAdRequestListener
 import ir.tapsell.sdk.TapsellAdRequestOptions
 import ir.tapsell.sdk.Tapsell
+import java.util.*
+import kotlin.collections.ArrayList
 
 
-
-
-class PackageActivity : BaseActivity2() {
+class PackageActivity : CafeBazaarActivity() {
 
     private var width:Float = 0f
     private var height:Float = 0f
+    private val TAG = "PackageActivity"
 
     private lateinit var adapter: PackageAdapter
 
@@ -56,6 +62,8 @@ class PackageActivity : BaseActivity2() {
 
         back.setOnClickListener{ onBackPressed() }
     }
+
+    override fun onSubscribeChange() {}
 
     private fun mGetScreenSize() {
         val display = windowManager.defaultDisplay
@@ -97,23 +105,27 @@ class PackageActivity : BaseActivity2() {
         intent2.putExtra("gameOption",s)
         intent2.putExtra("name",name)
         if (name != R.array.main){
-            dialog = Dialog(this@PackageActivity)
-            dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog .setCancelable(false)
-            dialog.setContentView(R.layout.update_dialog)
-            dialog.window.setBackgroundDrawableResource(android.R.color.transparent)
-            dialog.window.setLayout(height.toInt(),(height*0.65).toInt())
-            dialog.findViewById<TextView>(R.id.textView5).text = "برای استفاده از این پکیج لطفا یک تبلیغ ببینید"
-            dialog.findViewById<TextView>(R.id.later_btn).text = "دیدن تبلیغ"
-            dialog.findViewById<TextView>(R.id.later_btn).setOnClickListener{
-                showAd(intent2)
-                Toast.makeText(applicationContext,"در حال آماده سازی",Toast.LENGTH_SHORT).show()
+            if(!hasSubscribe){
+                dialog = Dialog(this@PackageActivity)
+                dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
+                dialog .setCancelable(false)
+                dialog.setContentView(R.layout.update_dialog)
+                dialog.window.setBackgroundDrawableResource(android.R.color.transparent)
+                dialog.window.setLayout(height.toInt(),(height*0.65).toInt())
+                dialog.findViewById<TextView>(R.id.textView5).text = "برای استفاده از این پکیج لطفا یک تبلیغ ببینید یا از صفحه اصلی اشتراک تهیه کنید"
+                dialog.findViewById<TextView>(R.id.later_btn).text = "دیدن تبلیغ"
+                dialog.findViewById<TextView>(R.id.later_btn).setOnClickListener{
+                    showAd(intent2)
+                    Toast.makeText(applicationContext,"در حال آماده سازی",Toast.LENGTH_SHORT).show()
+                }
+                dialog.findViewById<TextView>(R.id.link_btn).text = "لغو"
+                dialog.findViewById<TextView>(R.id.link_btn).setOnClickListener {
+                    dialog.cancel()
+                }
+                dialog.show()
+            }else{
+                startActivity(intent2)
             }
-            dialog.findViewById<TextView>(R.id.link_btn).text = "لغو"
-            dialog.findViewById<TextView>(R.id.link_btn).setOnClickListener {
-                dialog.cancel()
-            }
-            dialog.show()
         }else{
             startActivity(intent2)
         }
@@ -125,6 +137,7 @@ class PackageActivity : BaseActivity2() {
         val showOption = TapsellShowOptions()
         val listener = object :TapsellAdShowListener(){
             override fun onError(p0: String?) {
+                Log.d(TAG, "onError: Tapsell ::::" + p0)
                 Toast.makeText(applicationContext,"متاسفانه قادر به پخش تبلیغ نیستیم",Toast.LENGTH_SHORT).show()
                 dialog.cancel()
                 super.onError(p0)
@@ -174,4 +187,5 @@ class PackageActivity : BaseActivity2() {
         val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLSdyD5cduzaIAC4Y6C4DtcXUmXydW44wRRrkZujdX7yY6Q7njA/viewform?usp=sf_link"))
         startActivity(browserIntent)
     }
+
 }
