@@ -58,6 +58,34 @@ class Place(var icon:Int,var name:String) {
                 "آتشکده یزد"-> icon = R.drawable.atashkade
                 "منار جنبان"-> icon = R.drawable.menarjonban
                 "کویر مرنجاب"-> icon = R.drawable.maranjab
+                "ونیز"-> icon = R.drawable.venice
+                "میدان تایمز نیویورک"-> icon = R.drawable.timesquare
+                "رشته کوه آلپ"-> icon = R.drawable.thealps
+                "تاج محل"-> icon = R.drawable.tajmahal
+                "استون هنج"-> icon = R.drawable.stonehenj
+                "مجستمه آزادی"-> icon = R.drawable.statueofliberty
+                "ریو د جنیرو"-> icon = R.drawable.riodejanero
+                "برج پیتزا"-> icon = R.drawable.pizzatower
+                "خانه اپرا دیزنی"-> icon = R.drawable.operahouse
+                "کلیسا نوتردام"-> icon = R.drawable.notredamechurch
+                "آبشار نیاگارا"-> icon = R.drawable.niagara
+                "موزه لوور پاریس"-> icon = R.drawable.louvermusium
+                "لاس وگاس"-> icon = R.drawable.lasvegas
+                "برج ایفل"-> icon = R.drawable.ifeltower
+                "اهرام ثلاثه"-> icon = R.drawable.greatpyramid
+                "دره fjaorargljufurcanyon"-> icon = R.drawable.fjaorargljufurcanyon
+                "ساختمان امپایر استیت"-> icon = R.drawable.empirestatebuilding
+                "کلوسئوم"-> icon = R.drawable.colosseum
+                "دیوار چین"-> icon = R.drawable.chinawall
+                "کعبه"-> icon = R.drawable.kabe
+                "ایبیزا"-> icon = R.drawable.ibiza
+                "کاخ سفید"-> icon = R.drawable.whitehouse
+                "پارک مرکزی"-> icon = R.drawable.centralpark
+                "پارک والت دیزنی"-> icon = R.drawable.waltdisneypark
+                "بودای بزرگ"-> icon = R.drawable.bigbuda
+                "ابوالهول"-> icon = R.drawable.abolhole
+                "بیگ بن"-> icon = R.drawable.bigben
+                "مثلث برمودا"-> icon = R.drawable.bermudar
             }
             return icon
         }

@@ -55,31 +55,34 @@
         <item>کویر مرنجاب</item>
     </string-array>
 
-    <string-array name="foods">
-        <item>فرودگاه</item>
-        <item>مسجد</item>
-        <item>آتشنشانی</item>
-        <item>کلانتری</item>
-        <item>رستوران</item>
-        <item>بیمارستان</item>
-        <item>سیرک</item>
-        <item>کافه</item>
-        <item>ساحل</item>
-        <item>هتل</item>
-        <item>بانک</item>
-        <item>آرایشگاه</item>
-        <item>سینما</item>
-        <item>کشتی</item>
-        <item>قطار</item>
-        <item>مدرسه</item>
-        <item>دانشگاه</item>
-        <item>شرکت</item>
-        <item>کارخانه</item>
-        <item>جنگل</item>
-        <item>موزه</item>
-        <item>کاخ</item>
-        <item>خیابان</item>
-        <item>پارک</item>
-        <item>استخر</item>
+    <string-array name="worldWonders">
+        <item>ونیز</item>
+        <item>میدان تایمز نیویورک</item>
+        <item>رشته کوه آلپ</item>
+        <item>تاج محل</item>
+        <item>استون هنج</item>
+        <item>مجستمه آزادی</item>
+        <item>ریو د جنیرو</item>
+        <item>برج پیتزا</item>
+        <item>خانه اپرا دیزنی</item>
+        <item>کلیسا نوتردام</item>
+        <item>آبشار نیاگارا</item>
+        <item>موزه لوور پاریس</item>
+        <item>لاس وگاس</item>
+        <item>برج ایفل</item>
+        <item>اهرام ثلاثه</item>
+        <item>دره fjaorargljufurcanyon</item>
+        <item>ساختمان امپایر استیت</item>
+        <item>کلوسئوم</item>
+        <item>دیوار چین</item>
+        <item>کعبه</item>
+        <item>ایبیزا</item>
+        <item>کاخ سفید</item>
+        <item>پارک مرکزی</item>
+        <item>پارک والت دیزنی</item>
+        <item>بودای بزرگ</item>
+        <item>ابوالهول</item>
+        <item>بیگ بن</item>
+        <item>مثلث برمودا</item>
     </string-array>
 </resources>

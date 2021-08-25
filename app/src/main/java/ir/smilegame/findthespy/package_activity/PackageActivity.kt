@@ -56,6 +56,7 @@ class PackageActivity : CafeBazaarActivity() {
         var names:ArrayList<String> = ArrayList()
         names.add("اصلی")
         names.add("ایران")
+        names.add("جهان")
         names.add("همه")
         adapter = PackageAdapter(this@PackageActivity, names)
         recyclerView.adapter = adapter

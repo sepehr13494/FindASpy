@@ -28,7 +28,12 @@ class SplashActivity : BaseActivity() {
 
         mGetScreenSize()
         getUpdate()
+        getUpdateCafebazaar()
 
+
+    }
+
+    private fun getUpdateCafebazaar() {
 
     }
 
@@ -59,8 +64,8 @@ class SplashActivity : BaseActivity() {
                     }
                     response.body()!!.code == 500 -> {
                         val dialog = Dialog(this@SplashActivity)
-                        dialog .requestWindowFeature(Window.FEATURE_NO_TITLE)
-                        dialog .setCancelable(false)
+                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+                        dialog.setCancelable(false)
                         dialog.setContentView(R.layout.update_dialog)
                         dialog.window.setBackgroundDrawableResource(android.R.color.transparent)
                         dialog.window.setLayout(height.toInt(),(height*0.65).toInt())

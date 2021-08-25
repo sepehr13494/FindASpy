@@ -27,6 +27,7 @@ class PackageAdapter(var context: Context, var packs:ArrayList<String>) : androi
             when (packs[position]){
                 "اصلی"->id = R.array.main
                 "ایران"->id = R.array.iran
+                "جهان"->id = R.array.worldWonders
                 "همه"->id = 100
             }
             (context as PackageActivity).startGame(id)
